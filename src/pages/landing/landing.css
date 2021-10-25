@@ -25,12 +25,43 @@
   padding: 0 2vw 0 2vw;
 }
 .f2 {
-  background-color: #d4d4d4;
+  background-color: #ebebeb;
 }
 .frecipt {
   color: rgb(139, 139, 255);
   text-decoration: underline;
 }
 .frecipt:hover {
+  cursor: pointer;
+}
+.slogan {
+  font-size: 5rem;
+  color: #242424;
+  text-align: center;
+}
+.slogan-text {
+  font-size: 3rem;
+  color: #424242;
+  text-align: center;
+}
+.log-btn-div {
+  width: 100%;
+  margin-top: 5vh;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30vh;
+}
+.slogan-btn {
+  background-color: white;
+  border: 2px solid #242424;
+  height: 7vh;
+  width: 10vw;
+  font-size: 1.3rem;
+  color: #242424;
+}
+.slogan-btn:hover {
+  background-color: #242424;
+  color: white;
+  transition: ease-in 0.2s;
   cursor: pointer;
 }

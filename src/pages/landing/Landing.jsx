@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import LogHeader from "../../component/logheader/Header";
 import "./landing.css";
 export default function Landing() {
@@ -30,6 +31,15 @@ export default function Landing() {
           <p className="fprice">$5000.00</p>
           <p className="frecipt">Documents</p>
         </div>
+      </div>
+      <h1 className="slogan">Making Freelancers Lives Easier</h1>
+      <p className="slogan-text">
+        We make it easier for freelancers to track income, and writeoffs.
+      </p>
+      <div className="log-btn-div">
+        <Link className="slogan-btn-link">
+          <button className="slogan-btn">Sign-Up</button>
+        </Link>
       </div>
     </div>
   );
