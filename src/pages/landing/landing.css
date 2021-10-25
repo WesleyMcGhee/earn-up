@@ -1,0 +1,36 @@
+.moto {
+  margin-top: 25vh;
+  text-align: center;
+  color: #242424;
+  font-size: 7rem;
+}
+.moto-phrase {
+  margin-top: 1vh;
+  text-align: center;
+  color: #242424;
+  font-size: 3rem;
+  font-weight: 700;
+}
+.shocase-con {
+  margin: 50vh auto 30vh auto;
+}
+.line {
+  margin: 1vh auto 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 80vw;
+  height: 7vh;
+  border: 1px solid #424242;
+  padding: 0 2vw 0 2vw;
+}
+.f2 {
+  background-color: #d4d4d4;
+}
+.frecipt {
+  color: rgb(139, 139, 255);
+  text-decoration: underline;
+}
+.frecipt:hover {
+  cursor: pointer;
+}
