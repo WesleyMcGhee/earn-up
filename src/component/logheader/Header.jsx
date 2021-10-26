@@ -9,10 +9,10 @@ export default function LogHeader() {
       </Link>
       <div className="nav-con">
         <ul className="nav-list">
-          <Link className="nav-link">
+          <Link className="nav-link" to="/signup">
             <li className="nav-item">Sign Up</li>
           </Link>
-          <Link className="nav-link">
+          <Link className="nav-link" to="login">
             <li className="nav-item">Log In</li>
           </Link>
         </ul>

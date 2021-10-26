@@ -37,7 +37,7 @@ export default function Landing() {
         We make it easier for freelancers to track income, and writeoffs.
       </p>
       <div className="log-btn-div">
-        <Link className="slogan-btn-link">
+        <Link className="slogan-btn-link" to="/signup">
           <button className="slogan-btn">Sign-Up</button>
         </Link>
       </div>
