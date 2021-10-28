@@ -6,5 +6,7 @@ const ctrl = require("./controller");
 
 app.use(express.json());
 app.use(cors());
+app.post("/signup", ctrl.postSignup);
+app.post("/signin", ctrl.postLogin);
 
 app.listen(port, () => console.log(`Server is up and running on ${port}...`));
