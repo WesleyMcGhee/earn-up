@@ -30,6 +30,7 @@ module.exports = {
         let matched = bcrypt.compare(passhash, actUser.password);
         if (matched) {
           const accessToken = jwt.sign(username, process.env.TOKEN);
+          console.log("Works");
           return res.status(200).send({ id: actUser.id, token: accessToken });
         }
       } else {

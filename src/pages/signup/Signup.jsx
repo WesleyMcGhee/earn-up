@@ -26,11 +26,7 @@ export default function Signup({ content }) {
         password: pass,
       });
     } else {
-      toast("Passwords do not match", {
-        className: "error-not",
-        draggable: false,
-        position: toast.POSITION.TOP_RIGHT,
-      });
+      toast.error("Passwords do not match");
     }
   }
   return (
