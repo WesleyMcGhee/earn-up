@@ -26,7 +26,7 @@ export default function Signup({ content }) {
         password: pass,
       });
     } else {
-      toast("Password does not match", {
+      toast("Passwords do not match", {
         className: "error-not",
         draggable: false,
         position: toast.POSITION.TOP_RIGHT,
@@ -40,7 +40,8 @@ export default function Signup({ content }) {
       <div className="form-con">
         <form
           className="log-form"
-          onSubmit={() => {
+          onSubmit={(e) => {
+            e.preventDefault();
             sendIt();
           }}
         >
