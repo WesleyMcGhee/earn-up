@@ -1,28 +1,73 @@
-import React from "react";
+import React, { useState } from "react";
 import "./signup.css";
 import { Link } from "react-router-dom";
 import LogHeader from "../../component/logheader/Header";
-export default function Signup() {
+import axios from "axios";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+export default function Signup({ content }) {
+  let [username, setUsername] = useState("");
+  let [pass, setPass] = useState("");
+  let [conPass, setConPass] = useState("");
+  function handleUser(userinput) {
+    setUsername(userinput);
+  }
+  function handlePass(userinput) {
+    setPass(userinput);
+  }
+  function handleConPass(userinput) {
+    setConPass(userinput);
+  }
+  function sendIt() {
+    if (pass === conPass) {
+      axios.post("http://localhost:4500/signup", {
+        username: username,
+        password: pass,
+      });
+    } else {
+      toast("Passwords do not match", {
+        className: "error-not",
+        draggable: false,
+        position: toast.POSITION.TOP_RIGHT,
+      });
+    }
+  }
   return (
     <div>
       <LogHeader />
       <h1 className="bannar">Sign Up</h1>
       <div className="form-con">
-        <form className="log-form">
+        <form
+          className="log-form"
+          onSubmit={(e) => {
+            e.preventDefault();
+            sendIt();
+          }}
+        >
           <input
             type="text"
             className="form-text"
             placeholder="Username"
+            onChange={(e) => {
+              handleUser(e.target.value);
+            }}
           ></input>
           <input
             type="password"
             className="form-text"
             placeholder="Password"
+            onChange={(e) => {
+              handlePass(e.target.value);
+            }}
           ></input>
           <input
             type="password"
             className="form-text"
             placeholder="Confirm Password"
+            onChange={(e) => {
+              handleConPass(e.target.value);
+            }}
           ></input>
           <input type="submit" className="form-btn"></input>
         </form>
