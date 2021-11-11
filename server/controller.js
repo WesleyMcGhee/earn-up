@@ -6,6 +6,13 @@ module.exports = {
   postSignup: async (req, res) => {
     try {
       const { username, password } = req.body;
+      const userCheck = await pool.query(
+        "SELECT * FROM users WHERE username = $1;",
+        [username]
+      );
+      if (userCheck.rows[0]) {
+        res.status(200).send("");
+      }
       const hashedPassword = await bcrypt.hash(password, 10);
       const newUser = await pool.query(
         "INSERT INTO users (username, password) VALUES ($1, $2);",
@@ -13,7 +20,8 @@ module.exports = {
       );
       res.json(newUser.rows[0]);
     } catch (err) {
-      console.error(err);
+      console.error(err.message);
+      res.status(500).send("Internal Server Error! R Nar >_<");
     }
   },
   postLogin: async (req, res) => {
